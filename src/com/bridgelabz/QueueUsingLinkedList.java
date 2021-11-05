@@ -10,7 +10,7 @@ class QNode{
 }
 
 public class QueueUsingLinkedList {
- //create QNode data of front and rear value
+    //create QNode data of front and rear value
     QNode front,rear;
     //constructor to give value to front and rear
     public QueueUsingLinkedList() {
@@ -27,6 +27,17 @@ public class QueueUsingLinkedList {
         //add new node at end of the queue
         this.rear.next = temp;
         this.rear = temp;
+    }
+    // dqueue method to remove front data
+    public void dqueue() {
+        if (this.front == null) {
+            System.out.println("queue does not have the value");
+        }
+        QNode temp = this.front;
+        this.front = this.front.next;
+        if(this.front == null){
+            this.rear = null;
+        }
     }
     //display the queue data
     public void display(){
